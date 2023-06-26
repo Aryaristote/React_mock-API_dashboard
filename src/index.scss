@@ -465,6 +465,7 @@ $sidebar-footer-height: 230px;
                         padding: 15px 10px;
                         margin: 10px 0;
                         text-align: left;
+                        color: #545F7D;
 
                         .activeCls{
                             text-align: center;
@@ -492,6 +493,64 @@ $sidebar-footer-height: 230px;
                         }
                         .moreIcon{
                             font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .pagination{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            color: #545F7D;
+
+            .pag-content{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 20px;
+
+                select{
+                    border: none;
+                    padding: 5px 8px;
+                    border-radius: 4px;
+                    background: rgba(33, 63, 125, 0.10);
+
+                    &:focus{
+                        border: none;
+                        outline: none;
+                    }
+                }
+            }
+
+            .pag-btn{
+                
+                .btn-block{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 5px;
+
+                    .pagBtn{
+                        background: rgba(33, 63, 125, 0.10);
+                        padding: 6px;
+                        color: #213F7D;
+                        border-radius: 7px;
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    p{
+                        padding: 6px 8px;
+
+                        &:hover{
+                            cursor: pointer;
+                            background: rgba(33, 63, 125, 0.10);
+                            padding: 6px 8px;
+                            color: #213F7D;
+                            border-radius: 7px;
                         }
                     }
                 }

@@ -1,5 +1,4 @@
 import React from 'react';
-import { BiDotsVerticalRounded } from "react-icons/bi"
 import CardDashboad from './CardDashboad'
 import TableDashboad from './TableDashboad';
 import PaginationDashboad from './PaginationDashboad';
