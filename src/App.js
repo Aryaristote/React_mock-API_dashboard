@@ -1,6 +1,9 @@
 // import Login from './components/Login'
-import Home from './components/Home'
 // import logo from './img/Lendsqr.jpg';
+
+// import Home from './components/Home'
+
+import UserDetails from './components/UserDetails';
 import './index.scss';
 
 function App() {
@@ -13,8 +16,15 @@ function App() {
     //   </header>
     //   <Login />
     // </div>
+
+    // User Home Page 
+    // <div>
+    //   <Home />
+    // </div>
+
+    // User Details Page 
     <div>
-      <Home />
+      <UserDetails />
     </div>
   );
 }

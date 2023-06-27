@@ -1,21 +1,21 @@
-import React from 'react'
+import React from "react";
 import Nav from './sections/Nav'
-import BodyContent from './sections/BodyContent'
 import Sidebar from './sections/Sidebar'
+import DetailBody from "./sections/DetailBody";
 
-const Home = () => {
-  return (
-    <section>
+const UserDetails = () => {
+    return (
+        <section>
         <Nav />
 
         <div className="layout has-sidebar fixed-sidebar fixed-header">
             <Sidebar />
             <div id="overlay" className="overlay"></div>
 
-            <BodyContent />
+            <DetailBody />
         </div>
     </section>
-  );
-};
+    );
+}
 
-export default Home;
+export default UserDetails;

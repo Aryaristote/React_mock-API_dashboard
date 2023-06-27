@@ -20,8 +20,8 @@ function Login() {
     return (
         <div className='App-body'>
           <div className='body-left'>
-            {/* Left block  */}
           </div>
+          
           <div className='body-right'>
             <div className='right-content'>
               <div className='header'>

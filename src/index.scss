@@ -32,8 +32,10 @@
 
 
 body {
-    background-color: white;
+    background-color: whitesmoke;
     overflow-x: hidden;
+    font-family: AvenirReg!important;
+    color: #213F7D!important;
     width: 100%;
     height: 900px;
     flex-shrink: 0;
@@ -187,31 +189,6 @@ body {
         }
     }
 }
-  
-// Whole App responsive design
-//Mobile and ipad
-@media (min-width: 250px) and (max-width: 768px) {
-    body{
-        width: 100%;
-        .App{
-            .App-body{
-                display: flex;
-                flex-direction: column;
-                gap: 4px;
-                width: 100%;
-
-                .body-left{
-                    width: 80%;
-                    flex-shrink: 0;
-                }
-                .body-right{
-                    width: 100%;
-                    flex-shrink: 0;
-                }
-            }
-        }
-    }
-}
 
 // Dashboard css 
 
@@ -231,7 +208,6 @@ $sidebar-footer-height: 230px;
     justify-content: space-between; 
     padding: 2px 2rem;
     height: 70px;
-    background: white;
     background: #FFF;
     box-shadow: 3px 0px 20px 0px rgba(0, 0, 0, 0.04);
     position: fixed;
@@ -342,7 +318,10 @@ $sidebar-footer-height: 230px;
     flex-direction: row;
 
     .body-content{
-        width: 84vw;
+        width: 83vw;
+        height: 100vh;
+        position: absolute;
+        right: 0;
         background-color: whitesmoke;
         margin-top: 5em;
 
@@ -443,6 +422,101 @@ $sidebar-footer-height: 230px;
             box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.04);
             padding: 20px;
 
+            //Model code
+            .modal {
+                position: absolute;
+                top: 55%;
+                left: -9%;
+                width: 80%;
+                // height: 100%;
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              
+                .modal-content {
+                    background-color: white;
+                    padding: 20px;
+                    border-radius: 5px;
+                    border: 1px solid rgba(84, 95, 125, 0.14);
+                    background: #FFF;
+                    box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.04);
+                    width: 260px;
+              
+                    form {
+                        display: flex;
+                        flex-direction: column;
+
+                        div{
+                            margin: 5px 0;
+                            label{
+                                color: #545F7D;
+                                padding-bottom: 4px;
+                            }
+                    
+                            input {
+                                margin-bottom: 10px;
+                                padding: 5px;
+                                padding: 10px 4px;
+                                border: 1px solid #ccc;
+                                border-radius: 8px;
+                                color: #545F7D;
+                                width: 100%;
+                                outline: none;
+
+                                &:focus{
+                                    outline: none;
+                                }
+                            }
+    
+                            select{
+                                width: 100%;
+                                margin-bottom: 10px;
+                                padding: 5px;
+                                padding: 10px 4px;
+                                border: 1px solid #ccc;
+                                border-radius: 8px;
+                                color: #545F7D;
+                            }
+                        }
+                
+                        .modal-buttons {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-top: 10px;
+                            gap: 15px;
+                
+                            button {
+                                padding: 10px 20px;
+                                border-radius: 8px;
+                                border: none;
+                                cursor: pointer;
+                                width: 50%;
+
+                                &:focus {
+                                    outline: none;
+                                    border: none;
+                                };
+                    
+                                &:first-child {
+                                    background-color: #fff;
+                                    border: 1px solid #545F7D;
+                                    color: #545F7D;
+                                    font-weight: 700;
+                                }
+                    
+                                &:last-child {
+                                    border-radius: 8px;
+                                    border: none;
+                                    background: #39CDCC;
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            } 
+
             .styled-table{
                 border-collapse: collapse;
                 width: 100%;
@@ -452,6 +526,17 @@ $sidebar-footer-height: 230px;
                         color: #213F7D;
                         text-transform: uppercase;
                         text-align: left;
+
+                        th{
+
+                            &:hover{
+                                cursor: pointer;
+                            }
+
+                            .filterIcn{
+                                font-size: 15px;
+                            }
+                        }
                     }
                     th, tr{
                         padding: 17px 10px;
@@ -460,12 +545,17 @@ $sidebar-footer-height: 230px;
 
                 tbody tr{
                     border-bottom: 1px solid rgba(33, 63, 125, 0.10);
+
+                    &:hover{
+                        background-color: whitesmoke;
+                        cursor: pointer;
+                    }
                     
                     td{
                         padding: 15px 10px;
                         margin: 10px 0;
                         text-align: left;
-                        color: #545F7D;
+                        color: #545F7D; 
 
                         .activeCls{
                             text-align: center;
@@ -568,21 +658,14 @@ $sidebar-footer-height: 230px;
         display: flex;
         flex-direction: column;
     }
-  
-    .footer {
-        text-align: center;
-        margin-top: auto;
-        margin-bottom: 20px;
-        padding: 20px;
-    }
 }
   
   
 .sidebar {
     color: $text-color;
     overflow-x: hidden !important;
-    position: relative;
-    width: 17vw;
+    position: fixed;
+    width: 16vw;
     height: 90vh;
     background-color: white;
     margin-top: 5em;
@@ -1008,7 +1091,6 @@ a {
     }
 }
   
-  
 .layout {
     .sidebar {
         .pro-sidebar-logo {
@@ -1142,11 +1224,133 @@ a {
         margin: 0 10px;
         color: #3f4750;
     }
+} 
+//-------------------------------
+
+//User details
+.details-body{
+    width: 83vw;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    background-color: whitesmoke;
+
+    .body-content{
+        padding: 30px;
+
+        .up-content{
+            display: flex;
+            flex-direction: column;
+
+            .backIcon{
+                font-size: 30px;
+            }
+
+            .upHeader{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                .header-btn{
+                    display: flex;
+                    flex-direction: row;
+                    gap: 20px;
+
+                    button{
+                        background-color: transparent;
+                        padding: 6px 12px;
+                        border-radius: 6px;
+                        font-size: 12px;
+                        font-weight: 600;
+                        text-align: center;
+                        text-transform: uppercase;
+
+                        &:nth-child(1){
+                            color: #E4033B;
+                            border: 2px solid #E4033B;
+                        }
+
+                        &:nth-child(2){
+                            color: #39CDCC;
+                            border: 2px solid #39CDCC;
+                        }
+                    }
+                }
+            }
+        }
+
+        .down-content{
+            background-color: white;
+            box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.04);
+            border: 3px solid red;
+
+            .content-prf{
+                padding: 25px 25px 0 25px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 20px;
+
+                .userPrf{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 20px;
+                    border-right: 1px solid #dde3f3;
+                    padding-right: 20px;
+
+                    .profileImg{
+                        width: 100px;
+                        height: 100px;
+                        flex-shrink: 0;
+                    }
+
+                    .profileNames{
+                        div{
+                            .Name{
+                                font-size: 20px;
+                            }
+                            .descrpt{
+                                color: #545F7D;
+                                font-weight: 300;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
-  
 
 //-------------------------------
 
+
+// Whole App responsive design
+//Mobile and ipad
+@media (min-width: 250px) and (max-width: 768px) {
+    body{
+        width: 100%;
+        .App{
+            .App-body{
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                width: 100%;
+
+                .body-left{
+                    width: 80%;
+                    flex-shrink: 0;
+                }
+                .body-right{
+                    width: 100%;
+                    flex-shrink: 0;
+                }
+            }
+        }
+    }
+}
 //Small screen
 @media (min-width: 769px) and (max-width: 1024px) {
     body{

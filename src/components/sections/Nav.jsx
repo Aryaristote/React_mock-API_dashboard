@@ -14,8 +14,8 @@ const Nav = () => {
                 </div>
                 <div className='nav-left'>
                     <div className='search'>
-                        <input type="text" class="searchTerm" placeholder="Search for anything?"></input>
-                        <button type="submit" class="searchButton">
+                        <input type="text" className="searchTerm" placeholder="Search for anything?"></input>
+                        <button type="submit" className="searchButton">
                             <FaSearch className='searchIcn' />
                         </button>
                     </div>
