@@ -41,7 +41,7 @@ const TableDashboad = () => {
                         <td>5150</td>
                         <td>Melissa</td>
                         <td><span className='activeCls one'>Inactive</span></td>
-                        <td><BiDotsVerticalRounded className='moreIcon'/></td>
+                        <td className='moreLine'><BiDotsVerticalRounded className='moreIcon'/></td>
                     </tr>
                     <tr className="active-row">
                         <td>Melissa</td>
@@ -50,7 +50,7 @@ const TableDashboad = () => {
                         <td>5150</td>
                         <td>Melissa</td>
                         <td><span className='activeCls two'>Peding</span></td>
-                        <td><BiDotsVerticalRounded className='moreIcon'/></td>
+                        <td className='moreLine'><BiDotsVerticalRounded className='moreIcon'/></td>
                     </tr>
                     <tr className="active-row">
                         <td>Melissa</td>
@@ -59,7 +59,7 @@ const TableDashboad = () => {
                         <td>5150</td>
                         <td>Melissa</td>
                         <td><span className='activeCls three'>Blacklisted</span></td>
-                        <td><BiDotsVerticalRounded className='moreIcon'/></td>
+                        <td className='moreLine'><BiDotsVerticalRounded className='moreIcon'/></td>
                     </tr>
                     <tr className="active-row">
                         <td>Melissa</td>
@@ -68,7 +68,7 @@ const TableDashboad = () => {
                         <td>5150</td>
                         <td>Melissa</td>
                         <td><span className='activeCls four'>Active</span></td>
-                        <td><BiDotsVerticalRounded className='moreIcon'/></td>
+                        <td className='moreLine'><BiDotsVerticalRounded className='moreIcon'/></td>
                     </tr>
                 </tbody>
             </table>

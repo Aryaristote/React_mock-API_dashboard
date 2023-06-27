@@ -1,15 +1,15 @@
 // ******* Ary aristote
 @font-face{
     font-family: AvenirReg;
-    src: url(../public/AvenirReg.otf);
+    src: url(../../public/AvenirReg.otf);
 }
 @font-face{
     font-family: AvenirBold;
-    src: url(../public/AvenirBold.otf);
+    src: url(../../public/AvenirBold.otf);
 }
 @font-face{
     font-family: AvenirTH;
-    src: url(../public/AvenirTh.ttf);
+    src: url(../../public/AvenirTh.ttf);
 }
 
 .App-header{
@@ -95,7 +95,7 @@ body {
                 width: 49%;
                 height: 337.569px;
                 flex-shrink: 0;
-                background: url(./img/pablo-sign-in-1.svg);
+                background: url(../img/pablo-sign-in-1.svg);
                 background-position: center;
                 background-size: 100%;
                 background-repeat: no-repeat;
@@ -520,6 +520,8 @@ $sidebar-footer-height: 230px;
             .styled-table{
                 border-collapse: collapse;
                 width: 100%;
+                table-layout: fixed; 
+                overflow-y: auto;
 
                 thead {
                     tr{
@@ -584,6 +586,10 @@ $sidebar-footer-height: 230px;
                         .moreIcon{
                             font-size: 20px;
                         }
+                    }
+
+                    .moreLine{
+                        text-align: right;
                     }
                 }
             }
@@ -1241,6 +1247,7 @@ a {
         .up-content{
             display: flex;
             flex-direction: column;
+            margin-bottom: 40px;
 
             .backIcon{
                 font-size: 30px;
@@ -1283,7 +1290,6 @@ a {
         .down-content{
             background-color: white;
             box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.04);
-            border: 3px solid red;
 
             .content-prf{
                 padding: 25px 25px 0 25px;
@@ -1298,8 +1304,6 @@ a {
                     flex-direction: row;
                     align-items: center;
                     gap: 20px;
-                    border-right: 1px solid #dde3f3;
-                    padding-right: 20px;
 
                     .profileImg{
                         width: 100px;
@@ -1315,6 +1319,110 @@ a {
                             .descrpt{
                                 color: #545F7D;
                                 font-weight: 300;
+                                font-size: 11px;
+                            }
+                        }
+                    }
+                }
+
+                .userRate{
+                    border-right: 1px solid #dde3f3;
+                    border-left: 1px solid #dde3f3;
+                    padding: 15px 20px;
+
+                    b{
+                        color: #6d7896;
+                    }
+
+                    .stars{
+
+                        .startIcon{
+                            color: #E9B200;
+                        }
+                    }
+                }
+
+                .userFinance{
+                    border-right: 1px solid #dde3f3;
+                    padding: 15px 20px 15px 0;
+
+                    div{
+                        small{
+                            color: #6d7896;
+                        }
+                    }
+                }
+            }
+
+            .navProfile{
+
+                .navContent{
+                    width: 100%;
+                    padding: 20px 25px 0 25px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .navItem{
+                        padding: 0 25px;
+                        border-bottom: 3px solid #39CDCC;
+
+                        &:hover{
+                            cursor: pointer;
+                            color: #39CDCC;
+                        }
+                    }
+
+                    .active{
+                        h4{
+                            color: #39CDCC;
+                        }
+                    }
+                }
+            }
+        }
+
+        .showDetails{
+            background-color: white;
+            box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.04);
+            margin: 25px 0;
+
+            .details-content{
+                padding: 5px 25px;
+
+                .section{
+                    border-bottom: 1px solid #d9e1f1;
+
+                    .secBody{
+                        .infoSec{
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                            gap: 10px;
+                            grid-auto-rows: minmax(100px, auto);
+
+                            .block{
+                                padding-bottom: 25px;
+
+                                .up{
+                                    padding: 10px 0 25px 0;
+                                }
+                                .up, .down{
+                                    b{
+                                        font-size: 12px;
+                                        font-weight: 300;
+                                        text-transform: uppercase;
+                                        padding-bottom: 100px;
+                                    }
+
+                                    div{
+                                        b{
+                                            font-size: 16px;
+                                            text-transform: lowercase;
+                                            font-weight: bold;
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -1350,6 +1458,52 @@ a {
             }
         }
     }
+
+    .navBar{
+        .nav-left{
+            margin-left: 10px;
+
+            .profile{
+
+                .profile-opt{
+                    display: none!important;
+                }
+            }
+        }
+    }
+
+    .layout {
+        .sidebar {
+            display: none;
+        }
+        .body-content{
+            width: 100vw;
+        }
+    }
+
+    .details-body{
+        width: 100vw;
+
+        .up-content{
+            .backIcon{
+                font-size: 20px!important;
+            }
+
+            .upHeader{
+                .header-btn{
+                    button{
+                        padding: 3px 4px!important;
+                    }
+                }
+            }
+        }
+
+        .body-content{
+            .down-content{
+                padding: 15px 15px 0 15px;
+            }
+        }
+    }
 }
 //Small screen
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -1379,7 +1533,6 @@ a {
 //Normal screen
 @media (min-width: 1025px) and (max-width: 1200px) {
     body{
-        border: 10px solid green;
         width: 100%;
 
         .App{

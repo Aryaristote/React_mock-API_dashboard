@@ -1,10 +1,10 @@
 // import Login from './components/Login'
 // import logo from './img/Lendsqr.jpg';
 
-// import Home from './components/Home'
+import Home from './components/Home'
 
 import UserDetails from './components/UserDetails';
-import './index.scss';
+import './style/index.scss';
 
 function App() {
 
@@ -18,14 +18,14 @@ function App() {
     // </div>
 
     // User Home Page 
-    // <div>
-    //   <Home />
-    // </div>
+    <div>
+      <Home />
+    </div>
 
     // User Details Page 
-    <div>
-      <UserDetails />
-    </div>
+    // <div>
+    //   <UserDetails />
+    // </div>
   );
 }
 
