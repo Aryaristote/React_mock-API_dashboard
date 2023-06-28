@@ -30,6 +30,16 @@
     }
 }
 
+.loading{
+    margin: auto;
+    width: 6%;
+    padding: 20px;
+
+    .loadingImg{
+        width: 100px;
+    }
+}
+
 
 body {
     background-color: whitesmoke;
@@ -319,7 +329,7 @@ $sidebar-footer-height: 230px;
 
     .body-content{
         width: 83vw;
-        height: 100vh;
+        height: 100vh auto;
         position: absolute;
         right: 0;
         background-color: whitesmoke;
@@ -327,6 +337,8 @@ $sidebar-footer-height: 230px;
 
         .up-block{
             padding-bottom: 20px;
+            width: 100%;
+            margin: 0;
 
             div{
                 .title{
@@ -530,6 +542,7 @@ $sidebar-footer-height: 230px;
                         text-align: left;
 
                         th{
+                            width: 20px;
 
                             &:hover{
                                 cursor: pointer;
@@ -554,10 +567,13 @@ $sidebar-footer-height: 230px;
                     }
                     
                     td{
-                        padding: 15px 10px;
+                        padding: 13px 10px;
                         margin: 10px 0;
                         text-align: left;
                         color: #545F7D; 
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
 
                         .activeCls{
                             text-align: center;
@@ -590,6 +606,10 @@ $sidebar-footer-height: 230px;
 
                     .moreLine{
                         text-align: right;
+
+                        .moreIcon{
+                            margin-right: 15px;
+                        }
                     }
                 }
             }

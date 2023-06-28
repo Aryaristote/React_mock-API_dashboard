@@ -2,16 +2,20 @@ import { React, useState, useEffect } from 'react';
 import { fetchData } from '../../axios/apiService';
 import CardDashboad from './CardDashboad'
 import TableDashboad from './TableDashboad';
+import Loading from './Loading';
 import PaginationDashboad from './PaginationDashboad';
 
 const BodyContent = () => {
-    const [show, setSHow] = useState(false);
+    // const [show, setSHow] = useState(false);
     const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const userData = null;
 
     useEffect(() => {
         const getData = async () => {
-        const responseData = await fetchData();
-        setData(responseData);
+            const responseData = await fetchData();
+            setData(responseData);
+            setLoading(false)
         };
 
         getData();
@@ -23,17 +27,19 @@ const BodyContent = () => {
                 <div>
                     <h1 className='title'>Users</h1>
                 </div>
-                <CardDashboad /> 
+                <CardDashboad userData={data}/> 
             </div>
-            
-            <TableDashboad />
-            <PaginationDashboad />
 
-            { data ? (
-                <p>{data.username}</p>
-                ) : (
-                <p>Loading...</p> 
-            )}
+            { loading ? (
+                <Loading />
+            ):
+
+            (<TableDashboad userData={data} />)
+
+            }
+            
+            
+            <PaginationDashboad />
         </div>
     )
 }

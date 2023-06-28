@@ -2,7 +2,9 @@ import React from 'react';
 import { FiUsers, FiUserCheck, FiFileText, FiDatabase  } from "react-icons/fi";
 
 
-const CardDashboad = () => {
+const CardDashboad = (props) => {
+    const {userData} = props;
+
     return (
         <div className='card-list'>
             <div className="card-content">
@@ -11,7 +13,7 @@ const CardDashboad = () => {
                 </div>
                 <div className="card-title">
                     <h4><b>USERS</b></h4>
-                    <h1>1,458</h1>
+                    <h1>{userData ? userData.length : "..."}</h1>
                 </div>
             </div>
             <div className="card-content">

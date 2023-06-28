@@ -1,5 +1,6 @@
 // import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
+import Data from './axios/apiService';
 
 function Login() {
 
@@ -8,7 +9,9 @@ function Login() {
   
     const handleSubmit = (e) => {
       e.preventDefault();
-  
+
+
+      console.log(Data);
       // Perform login logic or API call here
       // You can access the entered email and password using the 'email' and 'password' variables
   
