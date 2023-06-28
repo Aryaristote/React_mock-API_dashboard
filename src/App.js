@@ -3,7 +3,7 @@
 
 import Home from './components/Home'
 
-import UserDetails from './components/UserDetails';
+// import UserDetails from './components/UserDetails';
 import './style/index.scss';
 
 function App() {
