@@ -3,23 +3,41 @@ import { fetchData } from '../../axios/apiService';
 import CardDashboad from './CardDashboad'
 import TableDashboad from './TableDashboad';
 import Loading from './Loading';
+
+
 import PaginationDashboad from './PaginationDashboad';
+import { FiArrowDown, FiArrowRight, FiArrowLeft } from "react-icons/fi"
 
 const BodyContent = () => {
-    // const [show, setSHow] = useState(false);
     const [data, setData] = useState(null);
+    const userData = data;
     const [loading, setLoading] = useState(true);
-    const userData = null;
+    const [itemsToShow, setItemsToShow] = useState(1);
+
+    // console.log(data.length);
 
     useEffect(() => {
         const getData = async () => {
             const responseData = await fetchData();
-            setData(responseData);
-            setLoading(false)
+
+            const userData = responseData;
+            
+
+            if (responseData !== null) {
+                setData(responseData.slice(0, itemsToShow));
+                setLoading(false);
+            }
         };
 
         getData();
-    }, []);
+    }, [itemsToShow]);
+    
+
+    const handleSelectChange = (event) => {
+        const selectedValue = parseInt(event.target.value) + itemsToShow;
+        setItemsToShow(selectedValue);
+    };
+    
     
     return (
         <div className="content body-content">
@@ -37,9 +55,17 @@ const BodyContent = () => {
             (<TableDashboad userData={data} />)
 
             }
+
+        <div>
+            <select value={itemsToShow} onChange={handleSelectChange}>
+                <option value={0}>0</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+                <option value={4}>4</option>
+            </select>
+        </div>
             
-            
-            <PaginationDashboad />
+            {/* <PaginationDashboad /> */}
         </div>
     )
 }

@@ -1,27 +1,44 @@
-// import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
-import Data from './axios/apiService';
+import React, { useEffect, useState } from 'react';
+import { fetchData } from '../axios/apiService';
+import { useNavigate } from 'react-router-dom';
+
+const useGetUserData = () => {
+  const [ userData, setUserData ] = useState([]);
+  const [ loading, setLoading ] = useState(false);
+
+  useEffect(() => {
+      const getData = async () => {
+          const responseData = await fetchData();
+          setUserData(responseData);
+          setLoading(false)
+      };
+
+      getData();
+  }, []);
+
+return { loading, userData };
+}
 
 function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { loading, userData } = useGetUserData();
+    const navigate = useNavigate();
   
     const handleSubmit = (e) => {
       e.preventDefault();
 
+      const user = userData.find(u => (
+        u.email === email && u.password === password)
+      );
+      navigate('/home');
 
-      console.log(Data);
-      // Perform login logic or API call here
-      // You can access the entered email and password using the 'email' and 'password' variables
-  
-      // Reset form fields
-      setEmail('');
-      setPassword('');
     };
   
     return (
-        <div className='App-body'>
+      <div className="App container">
+        <div className='App-body' >
           <div className='body-left'>
           </div>
           
@@ -49,6 +66,7 @@ function Login() {
               </div>
             </div>
           </div>
+        </div>
       </div>
     )
 }

@@ -42,7 +42,7 @@
 
 
 body {
-    background-color: whitesmoke;
+    // background-color: whitesmoke;
     overflow-x: hidden;
     font-family: AvenirReg!important;
     color: #213F7D!important;
@@ -326,6 +326,7 @@ $sidebar-footer-height: 230px;
     z-index: 1;
     display: flex;
     flex-direction: row;
+    width: 100%;
 
     .body-content{
         width: 83vw;
@@ -333,7 +334,7 @@ $sidebar-footer-height: 230px;
         position: absolute;
         right: 0;
         background-color: whitesmoke;
-        margin-top: 5em;
+        // margin-top: 5em;
 
         .up-block{
             padding-bottom: 20px;
@@ -576,28 +577,47 @@ $sidebar-footer-height: 230px;
                         text-overflow: ellipsis;
 
                         .activeCls{
-                            text-align: center;
-                            
+                            text-align: center; 
                             padding: 10px 20px!important;
                             margin-bottom: 5px;
                             border-radius: 50px;
                             font-weight: bold;
                         }
-                        .one{
+                        .Inactive{
                             background-color: #eaebee;
                             color: #545F7D;
+                            text-align: center; 
+                            padding: 10px 20px!important;
+                            margin-bottom: 5px;
+                            border-radius: 50px;
+                            font-weight: bold;
                         }
-                        .two{
+                        .Pending{
                             background-color: #eee5c9;
                             color: #E9B200;
+                            text-align: center; 
+                            padding: 10px 20px!important;
+                            margin-bottom: 5px;
+                            border-radius: 50px;
+                            font-weight: bold;
                         }
-                        .three{
+                        .Blacklisted{
                             background-color: #f5d6de;
                             color: #E4033B;
+                            text-align: center; 
+                            padding: 10px 20px!important;
+                            margin-bottom: 5px;
+                            border-radius: 50px;
+                            font-weight: bold;
                         }
-                        .four{
+                        .Active{
                             background-color: #d3f4dc;
                             color: #39CD62;
+                            text-align: center; 
+                            padding: 10px 20px!important;
+                            margin-bottom: 5px;
+                            border-radius: 50px;
+                            font-weight: bold;
                         }
                         .moreIcon{
                             font-size: 20px;
@@ -694,7 +714,7 @@ $sidebar-footer-height: 230px;
     width: 16vw;
     height: 90vh;
     background-color: white;
-    margin-top: 5em;
+    // margin-top: 5em;
     box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.04);
   
     &::-webkit-scrollbar-thumb {
@@ -1040,7 +1060,7 @@ $sidebar-footer-height: 230px;
                 }
                 }
             }
-        }
+    }
   
     &.rtl {
     .sidebar {

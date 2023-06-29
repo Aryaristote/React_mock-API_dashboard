@@ -33,6 +33,7 @@ const Sidebar = () => {
                                     </a>
                                 </li>
                                 <li className="menu-header"><span> CUSTOMERS </span></li>
+                                
                                 <li className="menu-item active">
                                     <a href="#">
                                         <span className="menu-icon">

@@ -1,21 +1,32 @@
-import { React, useState } from 'react';
+import { React, useEffect, useState } from 'react';
 import { BiDotsVerticalRounded, BiFilter } from "react-icons/bi"
 import Filter from './Filter';
+import { useNavigate } from 'react-router-dom';
+
+const USER_STATUS = ['Pending', 'Blacklisted', 'Active', 'Inactive'];
+const getUserStatus = () => {
+    const idx = Math.floor(Math.random() * USER_STATUS.length - 1);
+    return USER_STATUS[idx < 0 ? (idx * -1) : idx];
+}
 
 const TableDashboad = (props) => {
     const [showFilter, setShowFilter] = useState(false);
+    const [selectedId, setSelectedId] = useState(null);
     const {userData} = props;
+    const navigate = useNavigate();
 
     const EditedData = userData.map((item) => {
+
         return {
             ...item,
-            jobstatus:[
-                'Pending', 'Blacklisted', 'Active', 'Inactive'
-            ],
+            jobStatus: getUserStatus(),
         }
     })
 
-    // EditedData = Math.floor(Math.random() * EditedData.length);
+    const handleClick = (id) => {
+        setSelectedId(id);
+        navigate('/user-details/'+id);
+    }
 
     return (
         <div className='down-block'>
@@ -47,47 +58,18 @@ const TableDashboad = (props) => {
                 </thead>
                 <tbody>
                     {EditedData.map((item) => (
-                        <tr key={item.id} className="active-row">
+                        <tr key={item.id} className="active-row" selectedId={selectedId} onClick={() => handleClick(item.id)}>
                             <td>{item.company}</td>
                             <td>{item.username}</td>
                             <td>{item.email}</td>
                             <td>{item.number}</td>
                             <td>{item.createdAt}</td>
                             <td>
-                                {item.jobstatus.map((Onestatus) =>(
-                                    <b>{Onestatus} </b>
-                                ))}
+                                <span className={item.jobStatus}>{item.jobStatus}</span>
                             </td>
                             <td className='moreLine'><BiDotsVerticalRounded className='moreIcon'/></td>
                         </tr>
                     ))}
-                    <tr className="active-row">
-                        <td>Melissa</td>
-                        <td>5150</td>
-                        <td>Melissa</td>
-                        <td>5150</td>
-                        <td>Melissa</td>
-                        <td><span className='activeCls two'>Peding</span></td>
-                        <td className='moreLine'><BiDotsVerticalRounded className='moreIcon'/></td>
-                    </tr>
-                    <tr className="active-row">
-                        <td>Melissa</td>
-                        <td>5150</td>
-                        <td>Melissa</td>
-                        <td>5150</td>
-                        <td>Melissa</td>
-                        <td><span className='activeCls three'>Blacklisted</span></td>
-                        <td className='moreLine'><BiDotsVerticalRounded className='moreIcon'/></td>
-                    </tr>
-                    <tr className="active-row">
-                        <td>Melissa</td>
-                        <td>5150</td>
-                        <td>Melissa</td>
-                        <td>5150</td>
-                        <td>Melissa</td>
-                        <td><span className='activeCls four'>Active</span></td>
-                        <td className='moreLine'><BiDotsVerticalRounded className='moreIcon'/></td>
-                    </tr>
                 </tbody>
             </table>
         </div>
