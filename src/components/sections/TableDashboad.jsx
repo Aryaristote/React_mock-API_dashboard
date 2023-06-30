@@ -11,7 +11,6 @@ const getUserStatus = () => {
 
 const TableDashboad = (props) => {
     const [showFilter, setShowFilter] = useState(false);
-    const [selectedId, setSelectedId] = useState(null);
     const {userData} = props;
     const navigate = useNavigate();
 
@@ -24,7 +23,6 @@ const TableDashboad = (props) => {
     })
 
     const handleClick = (id) => {
-        setSelectedId(id);
         navigate('/user-details/'+id);
     }
 
@@ -58,11 +56,11 @@ const TableDashboad = (props) => {
                 </thead>
                 <tbody>
                     {EditedData.map((item) => (
-                        <tr key={item.id} className="active-row" selectedId={selectedId} onClick={() => handleClick(item.id)}>
+                        <tr key={item.id} id={item.id} className="active-row" onClick={() => handleClick(item.id)}>
                             <td>{item.company}</td>
                             <td>{item.username}</td>
                             <td>{item.email}</td>
-                            <td>{item.number}</td>
+                            <td>{item.phoneNumber}</td>
                             <td>{item.createdAt}</td>
                             <td>
                                 <span className={item.jobStatus}>{item.jobStatus}</span>

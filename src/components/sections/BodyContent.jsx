@@ -5,16 +5,14 @@ import TableDashboad from './TableDashboad';
 import Loading from './Loading';
 
 
-import PaginationDashboad from './PaginationDashboad';
-import { FiArrowDown, FiArrowRight, FiArrowLeft } from "react-icons/fi"
+// import PaginationDashboad from './PaginationDashboad';
+// import { FiArrowDown, FiArrowRight, FiArrowLeft } from "react-icons/fi"
 
 const BodyContent = () => {
     const [data, setData] = useState(null);
     const userData = data;
     const [loading, setLoading] = useState(true);
     const [itemsToShow, setItemsToShow] = useState(1);
-
-    // console.log(data.length);
 
     useEffect(() => {
         const getData = async () => {
