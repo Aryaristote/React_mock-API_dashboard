@@ -2,7 +2,6 @@ import React from 'react'
 
 export default function UserTabOne(props) {
     const {itemData} = props;
-    console.log(itemData);
 
     return (
         <section className="showDetails">

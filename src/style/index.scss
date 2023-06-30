@@ -321,19 +321,17 @@ $sidebar-footer-height: 230px;
     }
 }
 
+
+
 .layout {
-    z-index: 1;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
 
     .body-content{
-        width: 84vw;
-        height: 100vh;
-        position: absolute;
-        right: 0;
-        background-color: whitesmoke;
-        // margin-top: 5em;
+        // width: 34vw;
+        // height: 100% auto;
+        // position: absolute;
+        // right: 0;
+        // background-color: whitesmoke;
+        // padding-bottom: 5em;
 
         .up-block{
             padding-bottom: 20px;
@@ -709,11 +707,9 @@ $sidebar-footer-height: 230px;
 .sidebar {
     color: $text-color;
     overflow-x: hidden !important;
+    width: 17%;
+    height: 97vh;
     position: fixed;
-    width: 16vw;
-    height: 90vh;
-    background-color: white;
-    // margin-top: 5em;
     box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.04);
   
     &::-webkit-scrollbar-thumb {
@@ -837,17 +833,17 @@ $sidebar-footer-height: 230px;
                 opacity: 0.5;
             }
             .menu-item {
-                border-left: 6px solid #fff;
+                // border-left: 6px solid #fff;
 
                 &:hover{
-                    border-left: 6px solid #39CDCC;
+                    // border-left: 6px solid #39CDCC;
                     background-color: #afefef;
                 }
                 a {
                     display: flex;
                     align-items: center;
                     height: 50px;
-                    padding: 0 20px;
+                    padding: 0 15px;
                     color: $text-color;
         
                     .menu-icon {
@@ -858,7 +854,7 @@ $sidebar-footer-height: 230px;
                         line-height: 35px;
                         text-align: center;
                         display: inline-block;
-                        margin-right: 10px;
+                        // margin-right: 10px;
                         border-radius: 2px;
                         transition: color 0.3s;
                     }
@@ -1275,13 +1271,18 @@ a {
 //User details
 .details-body{
     width: 83vw;
-    height: 100vh;
+    height: auto;
+    overflow-x: hidden;
     position: absolute;
-    right: 0;
+    right: 0%;
+    top: 5em;
     background-color: whitesmoke;
 
     .body-content{
         padding: 30px;
+        height: 90vh;
+        width: 100%;
+        
 
         .up-content{
             display: flex;

@@ -20,6 +20,7 @@ export default function DetailBody(props) {
     const [itemData, setItemData] = useState(null);
     const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState(1);
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -45,7 +46,7 @@ export default function DetailBody(props) {
 
     return (
         <div className='details-body'>
-            <div className="body-content">
+            <div className="body-content"> 
                 <section className='up-content'>
                     <BsArrowLeft onClick={navigateToHome} className='backIcon'/>
                     <div className='upHeader'>
@@ -128,8 +129,7 @@ export default function DetailBody(props) {
                     </div>
                     ) : (
                         <Loading />
-                    )}
-                    
+                    )} 
             </div>
         </div>
     )

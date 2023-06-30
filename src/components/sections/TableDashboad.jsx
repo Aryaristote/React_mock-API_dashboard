@@ -36,19 +36,19 @@ const TableDashboad = (props) => {
                         <th onClick={()=> setShowFilter(!showFilter)}>
                             organization <BiFilter className='filterIcn' />
                         </th>
-                        <th onClick={()=> setShowFilter(!showFilter)}>
+                        <th>
                             Username <BiFilter className='filterIcn' />
                         </th>
-                        <th onClick={()=> setShowFilter(!showFilter)}>
+                        <th>
                             Email <BiFilter className='filterIcn' />
                         </th>
-                        <th onClick={()=> setShowFilter(!showFilter)}>
+                        <th>
                             Phone number <BiFilter className='filterIcn' />
                         </th>
-                        <th onClick={()=> setShowFilter(!showFilter)}>
+                        <th>
                             Date joined <BiFilter className='filterIcn' />
                         </th>
-                        <th style={{ width: '11%' }} onClick={()=> setShowFilter(!showFilter)}>
+                        <th style={{ width: '11%' }}>
                             Status <BiFilter className='filterIcn' />
                         </th>
                         <th style={{ width: '2%' }}></th>
