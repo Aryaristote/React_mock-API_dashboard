@@ -13,6 +13,7 @@ const Nav = () => {
     const [input, setInput] = useState('');
     const [filteredData, setFilteredData] = useState([]);
     const [showResultBlk, setShowResultBlk] = useState(false);
+    const [isActive, setIsActive] = useState(false);
 
     useEffect(() => {
         const getData = async () => {
@@ -46,13 +47,20 @@ const Nav = () => {
         });
         setFilteredData(results);
         setShowResultBlk(true);
+
+        if (filteredData.length > 0) {
+            setIsActive(true);
+        }else{
+            setIsActive(false);
+        }
+        
     };
 
     const handleClick = () => {
-        setInput(0); 
+        setIsActive(false);
     };
 
-    const displayStyle = input.length > 0 ? { display: 'inline' } : { display: 'none' };
+    // const displayStyle = input.length > 0 ? { display: 'inline' } : { display: 'none' };
 
     return(
         <nav className='navBar'>
@@ -72,12 +80,10 @@ const Nav = () => {
                                 <FaSearch className='searchIcn' />
                             </button>
                         </form>
-                    </div>
+                    </div> 
 
-                    { loading ? (
-                       <p></p>
-                    ):(
-                        <div className='searchResult' style={displayStyle}>
+                    {isActive && (
+                        <div div className={`searchResult ${isActive ? 'active' : ''}`}>  
                             <div className='sResult-ctn'>
                                 <div className='title-sec'>
                                     <h2>{filteredData.length} Result{filteredData.length > 0 ? 's' : ''}</h2>
@@ -89,8 +95,8 @@ const Nav = () => {
                                     </div>
                                 ))}  
                             </div>
-                        </div>
-                    )}
+                        </div>)
+                    }
                     <div className='profile'>
                         <div>
                             <li><a href="#">Docs</a></li>

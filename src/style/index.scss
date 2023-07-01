@@ -293,10 +293,6 @@ $sidebar-footer-height: 230px;
                 }
             }
 
-            .hiddenClass{
-                display: none;
-            }
-
             .searchResult{
                 position: fixed;
                 width: 400px;
@@ -346,6 +342,10 @@ $sidebar-footer-height: 230px;
                         }
                     }
                 }
+            }
+
+            .active{
+                border: 3px solidred;
             }
 
             .profile{
