@@ -6,9 +6,7 @@ import {
 
 
 const Sidebar = (props) => {
-    const [newActiveTab, setNewactiveTab] = useState(''); 
-    // const {activeTab, setActiveTab} = props; 
-    // console.log(activeTab);
+    const [newActiveTab, setNewactiveTab] = useState(1);
 
     const handleTabClick = (tabNumber) => {
         const value = tabNumber;

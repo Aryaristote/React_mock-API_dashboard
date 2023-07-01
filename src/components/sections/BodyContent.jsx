@@ -6,56 +6,60 @@ import Loading from './Loading';
 
 import { FiArrowDown, FiArrowRight, FiArrowLeft } from "react-icons/fi";
 
+const USER_STATUS = ['Pending', 'Blacklisted', 'Active', 'Inactive'];
+const getUserStatus = () => {
+    const idx = Math.floor(Math.random() * USER_STATUS.length - 1);
+    return USER_STATUS[idx < 0 ? (idx * -1) : idx];
+}
+const formatUserData = (data) => {
+    return data.map((item) => {
+        return {
+            ...item,
+            jobStatus: getUserStatus(),
+        }
+    })
+}
+
 const BodyContent = () => {
     const [data, setData] = useState(null);
-    const userData = data;
     const [loading, setLoading] = useState(true);
-    const [itemsToShow, setItemsToShow] = useState(100);
+    const [itemsToShow, setItemsToShow] = useState(10);
     const [input, setInput] = useState('');
+    const [filteredData, setFilteredData] = useState([]);
 
     useEffect(() => {
         const getData = async () => {
             const responseData = await fetchData();
 
             if (responseData !== null) {
-                setData(responseData.slice(0, itemsToShow));
+                const formatted = formatUserData(responseData);
+                setData(formatted);
+                setFilteredData(formatted.slice(0, itemsToShow));
                 setLoading(false);
             }
         };
 
         getData();
-    }, [itemsToShow]);
+    }, []);
 
     const handleSelectChange = (event) => {
         const selectedValue = parseInt(event.target.value) + itemsToShow;
         setItemsToShow(selectedValue);
+        setFilteredData([...data.slice(0, selectedValue)]);
     };
-
-    // const fetchData = (value) => {
-    //     fetch('https://649895369543ce0f49e22cc6.mockapi.io/users')
-    //     .then(response => response.json())
-    //     .then((json) => {
-    //         const results = json.filter((username) => {
-    //             return username && username.username && username.username.toLowerCase().includes(value)
-    //         });
-    //         console.log(results);
-    //     });
-    // };
 
     const handleChange = (value) => {
-        setInput(value);
-        // fetchData(value);
+        setInput(value); 
+        const results = data.filter((username) => {
+            return username && username.username && username.username.toLowerCase().includes(value)
+        });
+        console.log(results)
+        setFilteredData(results);
     };
-    
     
     return (
         <div className='details-body'>
             <div className="content body-content">
-
-                <div>
-                    <input type="search" value={input} onChange={(e) => handleChange(e.target.value)} />
-                    {/* <button onClick={handleSearch}>Search</button> */}
-                </div>
 
                 <div className='up-block'>
                     <div>
@@ -70,16 +74,17 @@ const BodyContent = () => {
 
                 (
                     <div>
-                        <TableDashboad userData={data} />
+                        <TableDashboad userData={filteredData} />
 
                         <div className='pagination'>
                             <div className='pag-content'>
                                 <p>Showing</p>
                                     <select value={itemsToShow} onChange={handleSelectChange}>
-                                        <option value={0}>See More<FiArrowDown /></option>
-                                        <option value={2}>2 More<FiArrowDown /></option>
-                                        <option value={3}>3 More<FiArrowDown /></option>
-                                        <option value={10}>10 More<FiArrowDown /></option>
+                                        <option>See More<FiArrowDown /></option>
+                                        <option value={20}>Show 20<FiArrowDown /></option>
+                                        <option value={40}>Show 40<FiArrowDown /></option>
+                                        <option value={50}>Show 50<FiArrowDown /></option>
+                                        <option value={100}>Show All<FiArrowDown /></option>
                                     </select>
                                 <p>out of 200</p>
                             </div>

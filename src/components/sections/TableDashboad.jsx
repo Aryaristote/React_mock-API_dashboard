@@ -3,24 +3,12 @@ import { BiDotsVerticalRounded, BiFilter } from "react-icons/bi"
 import Filter from './Filter';
 import { useNavigate } from 'react-router-dom';
 
-const USER_STATUS = ['Pending', 'Blacklisted', 'Active', 'Inactive'];
-const getUserStatus = () => {
-    const idx = Math.floor(Math.random() * USER_STATUS.length - 1);
-    return USER_STATUS[idx < 0 ? (idx * -1) : idx];
-}
 
 const TableDashboad = (props) => {
     const [showFilter, setShowFilter] = useState(false);
     const {userData} = props;
     const navigate = useNavigate();
 
-    const EditedData = userData.map((item) => {
-
-        return {
-            ...item,
-            jobStatus: getUserStatus(),
-        }
-    })
 
     const handleClick = (id) => {
         navigate('/user-details/'+id);
@@ -55,7 +43,7 @@ const TableDashboad = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {EditedData.map((item) => (
+                    {userData.map((item) => (
                         <tr key={item.id} id={item.id} className="active-row" onClick={() => handleClick(item.id)}>
                             <td>{item.company}</td>
                             <td>{item.username}</td>

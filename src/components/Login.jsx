@@ -24,6 +24,7 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const { loading, userData } = useGetUserData();
+    const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
   
     const handleSubmit = (e) => {
@@ -34,6 +35,14 @@ function Login() {
       );
       navigate('/home');
 
+    };
+
+    const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+    const handleTogglePassword = () => {
+      setShowPassword(!showPassword);
     };
   
     return (
@@ -54,7 +63,15 @@ function Login() {
                     <input autoComplete="false" placeholder='Email' type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
                   </div>
                   <div>
-                    <input autoComplete="false" placeholder='Password' type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                    <input autoComplete="false" 
+                      className='password-input'
+                      type={showPassword ? 'text' : 'password'}
+                      value={password} 
+                      placeholder="Password"
+                      onChange={(e) => setPassword(e.target.value)} required />
+                      <div className="toggle-password" onClick={handleTogglePassword}>
+                        {showPassword ? 'Hide' : 'Show'}
+                      </div>
                   </div>
                   <div className='forgetPass'>
                     <a href="/forgot-password" className="">Forgot Password?</a>

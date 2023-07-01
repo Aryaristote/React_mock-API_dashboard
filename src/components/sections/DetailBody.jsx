@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { BsArrowLeft } from 'react-icons/bs'
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai'
-import user from '../../img/user.png';
+import { BiUser } from 'react-icons/bi'
+// import user from '../../img/user.png';
 import { useParams } from 'react-router-dom';
 import Loading from './Loading';
 import { useNavigate } from 'react-router-dom'; 
@@ -20,7 +21,7 @@ export default function DetailBody(props) {
     const [itemData, setItemData] = useState(null);
     const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState(1);
-    const [searchQuery, setSearchQuery] = useState('');
+    // const [searchQuery, setSearchQuery] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -63,7 +64,10 @@ export default function DetailBody(props) {
                         <section className="down-content">
                             <div className="content-prf">
                                 <div className="userPrf">
-                                    <img src={user} className="profileImg" alt="logo" />
+                                    {/* <img src={user} className="profileImg" alt="logo" /> */}
+                                    <div className="profileImg">
+                                        <BiUser className='prfIcon' />
+                                    </div>
                                     <div className='profileNames'>
                                         <div>
                                             <b className='Name'>{itemData.username}</b>
