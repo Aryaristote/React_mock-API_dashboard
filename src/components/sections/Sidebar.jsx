@@ -3,6 +3,7 @@ import {
     FaBars, FaBriefcase, FaArrowDown, FaUsers, FaHome, FaUsersCog, FaPiggyBank,
     FaHandHoldingWater, FaUserCheck, FaUserMinus, FaMoneyBillAlt
 } from "react-icons/fa";
+import { SlGameController } from 'react-icons/sl';
 
 
 const Sidebar = (props) => {
@@ -53,9 +54,9 @@ const Sidebar = (props) => {
                             <li className="menu-item">
                                 <a href="#" className={`tab ${newActiveTab === 2 ? 'active' : ''}`} onClick={() => handleTabClick(2)}>
                                     <span className="menu-icon">
-                                        <FaUsersCog />
+                                        <SlGameController />
                                     </span>
-                                    <span className="menu-title">Guarantors</span>
+                                    <span className="menu-title">Games</span>
                                 </a>
                             </li>
                             <li className="menu-item">

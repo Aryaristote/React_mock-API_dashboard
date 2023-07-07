@@ -1,13 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios'
 
 export default function SidebarUser() {
+  const [posts, setPost] = useState({});
+  const [id, setId] = useState(1);
+  const [idOnclick, setIdOnCLick] = useState(1)
+
+  const handleOnclick = () => {
+    setIdOnCLick(id);
+  }
+  useEffect(() => {
+    axios.get(`https://jsonplaceholder.typicode.com/posts/${idOnclick}`)
+      .then(res => {
+        console.log(res)
+        setPost(res.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  },[idOnclick])
+
+   
   return (
     <div className='details-body'>
       <div className="content body-content">
           <div className='up-block'>
-              <div>
-                  <h1 className='title'>Guarantors</h1>
-              </div>
+            <h1 className='title'>Games</h1>
+            <input type="text" value={id} onChange={e => setId(e.target.value)}/>
+            <button onClick={handleOnclick}>Find the Id</button>
+
+            <li className='alert alert-primary'>{posts.title}</li>
+            {/* <ul className='list-block'>
+              {
+                posts.map(post => <li className='alert alert-primary' key={post.id}>{post.title}</li>)
+              }
+            </ul> */}
           </div>
       </div>
     </div>

@@ -19,8 +19,8 @@
     gap: 4px;
 
     .App-logo{
-        width: 24.75px;
-        height: 25.004px;
+        width: 80px;
+        height: 60px;
         flex-shrink: 0;
     }
     b{
@@ -39,6 +39,31 @@
         width: 100px;
     }
 }
+
+// Gamming window---------
+.details-body{
+    .content{
+        .up-block{
+            .list-block{
+                .alert{
+                    position: relative;
+                    padding: 0.75rem 1.25rem;
+                    margin-bottom: 1rem;
+                    border: 1px solid transparent;
+                    border-radius: 0.25rem;
+                    list-style: none;
+                }
+                .alert-primary {
+                    color: #155724;
+                    background-color: #d4edda;
+                    border-color: #c3e6cb;
+                }
+            }
+        }
+    }
+}
+
+//ENd
 
 
 body {
@@ -83,8 +108,8 @@ body {
             gap: 4px;
 
             .App-logo{
-                width: 24.75px;
-                height: 25.004px;
+                width: 80px;
+                height: 60px;
                 flex-shrink: 0;
             }
             b{
@@ -391,8 +416,6 @@ $sidebar-footer-height: 230px;
         }
     }
 }
-
-
 
 .layout {
 

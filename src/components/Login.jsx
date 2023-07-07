@@ -34,7 +34,6 @@ function Login() {
         u.email === email && u.password === password)
       );
       navigate('/home');
-
     };
 
     const handlePasswordChange = (e) => {

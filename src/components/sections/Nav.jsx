@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { fetchData } from '../../axios/apiService';
 import user from '../../img/user.png';
-import logo from '../../img/Lendsqr.jpg';
+import logo from '../../img/new_logo.jpg';
 import { FaSearch } from "react-icons/fa"; 
 import { FaBell } from "react-icons/fa";
 import { MdCancel } from "react-icons/md";
@@ -60,14 +60,11 @@ const Nav = () => {
         setIsActive(false);
     };
 
-    // const displayStyle = input.length > 0 ? { display: 'inline' } : { display: 'none' };
-
     return(
         <nav className='navBar'>
             <div className='nav-content'>
                 <div className='App-header'>
                     <img src={logo} className="App-logo" alt="logo" />
-                    <b>lendsqr</b>
                 </div>
                 <div className='nav-left'>
                     <div>
