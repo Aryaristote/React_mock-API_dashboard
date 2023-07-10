@@ -16,7 +16,7 @@ export default function SidebarUser() {
         setPost(res.data)
       })
       .catch(err => {
-        console.log(err)
+        console.log(err) 
       })
   },[idOnclick])
 
