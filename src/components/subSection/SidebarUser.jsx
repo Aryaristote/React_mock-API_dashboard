@@ -18,7 +18,7 @@ export default function SidebarUser() {
       .catch(err => {
         console.log(err) 
       })
-  },[idOnclick])
+  },[idOnclick]) 
 
    
   return (
@@ -30,11 +30,6 @@ export default function SidebarUser() {
             <button onClick={handleOnclick}>Find the Id</button>
 
             <li className='alert alert-primary'>{posts.title}</li>
-            {/* <ul className='list-block'>
-              {
-                posts.map(post => <li className='alert alert-primary' key={post.id}>{post.title}</li>)
-              }
-            </ul> */}
           </div>
       </div>
     </div>
