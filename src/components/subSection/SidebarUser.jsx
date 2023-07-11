@@ -28,8 +28,6 @@ export default function SidebarUser() {
             <h1 className='title'>Games</h1>
             <input type="text" value={id} onChange={e => setId(e.target.value)}/>
             <button onClick={handleOnclick}>Find the Id</button>
-            
-
             <li className='alert alert-primary'>{posts.title}</li>
           </div>
       </div>

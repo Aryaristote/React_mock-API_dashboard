@@ -1,4 +1,14 @@
 // ******* Ary aristote
+// Dashboard css 
+$text-color: #7d84ab;
+$secondary-text-color: #dee2ec;
+
+$bg-color: #fff;
+$secondary-bg-color: #fff;
+
+$border-color: rgba(#535d7d, 0.3);
+
+
 @font-face{
     font-family: AvenirReg;
     src: url(../../public/AvenirReg.otf);
@@ -64,7 +74,6 @@
 }
 
 //ENd
-
 
 body {
     // background-color: whitesmoke;
@@ -239,19 +248,6 @@ body {
         }
     }
 }
-
-// Dashboard css 
-
-$text-color: #7d84ab;
-$secondary-text-color: #dee2ec;
-
-$bg-color: #fff;
-$secondary-bg-color: #fff;
-
-$border-color: rgba(#535d7d, 0.3);
-
-$sidebar-header-height: 100px;
-$sidebar-footer-height: 230px;
 
 .navBar {
     display: flex;  
