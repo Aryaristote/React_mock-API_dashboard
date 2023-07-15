@@ -8,6 +8,9 @@ $secondary-bg-color: #fff;
 
 $border-color: rgba(#535d7d, 0.3);
 
+$sidebar-header-height: 100px;
+$sidebar-footer-height: 230px;
+
 
 @font-face{
     font-family: AvenirReg;
@@ -1576,9 +1579,7 @@ a {
         }
     }
 }
-
 //-------------------------------
-
 
 // Whole App responsive design
 //Mobile and ipad

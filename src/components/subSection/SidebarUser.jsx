@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useEffect, useState } from 'react';
+import DataFetching from './DataFetching';
 import axios from 'axios'
 
 export default function SidebarUser() {
@@ -26,6 +28,7 @@ export default function SidebarUser() {
       <div className="content body-content">
           <div className='up-block'>
             <h1 className='title'>Games</h1>
+            <DataFetching /><br /><br />
             <input type="text" value={id} onChange={e => setId(e.target.value)}/>
             <button onClick={handleOnclick}>Find the Id</button>
             <li className='alert alert-primary'>{posts.title}</li>

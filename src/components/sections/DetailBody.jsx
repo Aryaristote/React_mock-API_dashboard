@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { BsArrowLeft } from 'react-icons/bs'
 import { AiOutlineStar, AiFillStar } from 'react-icons/ai'
 import { BiUser } from 'react-icons/bi'
-// import user from '../../img/user.png';
 import { useParams } from 'react-router-dom';
 import Loading from './Loading';
 import { useNavigate } from 'react-router-dom'; 
