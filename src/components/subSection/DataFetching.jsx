@@ -1,23 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import { buyCake } from '../redux/index';
+import React, { useEffect, useState } from 'react';
 
 function DataFetching() {
-  const [timer, setTimer] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTimer(prev => prev + 1)
-    }, 2000)
-
-    return () => {
-      clearInterval(interval);
-    }
-  })
-
   return (
     <div>
-      <h1>{timer}</h1>
+      <h1><b>Number of cakes: 30</b></h1>
+      <button>Buy a Cake</button>
     </div>
   )
 }
 
-export default DataFetching
+const mapStateToProps = state => {
+  return {
+    numOfCakes: state.numOfCakes 
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    buyCake: () => dispatch(buyCake())
+  }
+}
+
+export default (mapStateToProps, mapDispatchToProps)(DataFetching)
