@@ -1,1 +1,1 @@
-import { buyCake } from './cake/cakeReducer';
+export { buyCake } from './cake/cakeActions';

@@ -1,11 +1,12 @@
-import { buyCake } from '../redux/index';
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import { buyCake } from '../redux';
 
-function DataFetching() {
+function DataFetching(props) {
   return (
     <div>
-      <h1><b>Number of cakes: 30</b></h1>
-      <button>Buy a Cake</button>
+      <h1><b>Number of cakes: {props.numOfCakes}</b></h1>
+      <button onClick={props.buyCake}>Buy a Cake</button>
     </div>
   )
 }
@@ -22,4 +23,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default (mapStateToProps, mapDispatchToProps)(DataFetching)
+export default connect(mapStateToProps, mapDispatchToProps)(DataFetching)
