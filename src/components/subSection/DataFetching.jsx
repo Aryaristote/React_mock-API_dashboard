@@ -1,26 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
-import { buyCake } from '../redux';
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { buyCake } from '../redux'
 
-function DataFetching(props) {
+export default function DataFetching() {
+  const numOfCakes = useSelector(state => state.numOfCakes);
+  const dispatch = useDispatch()
+
   return (
     <div>
-      <h1><b>Number of cakes: {props.numOfCakes}</b></h1>
-      <button onClick={props.buyCake}>Buy a Cake</button>
+      <h2>Number of cakes: { numOfCakes }</h2>
+      <button onClick={() => dispatch(buyCake())}>Buy new Cake</button>
     </div>
   )
 }
-
-const mapStateToProps = state => {
-  return {
-    numOfCakes: state.numOfCakes 
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    buyCake: () => dispatch(buyCake())
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(DataFetching)
