@@ -1,7 +1,7 @@
-import { BUY_CAKE } from "./cakeTypes"
+import { BUY_ICECREAM } from "./iceCreamTypes"
 
-export const buyCake = () => {
+export const buyIceCream = () => {
     return {
-        type: BUY_CAKE
+        type: BUY_ICECREAM
     }
 }

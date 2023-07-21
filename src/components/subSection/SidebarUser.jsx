@@ -1,3 +1,5 @@
+// Some code haveve been record in the seek of learning 
+
 import React from 'react';
 import { useEffect, useState } from 'react';
 import DataFetching from './DataFetching';
@@ -11,8 +13,8 @@ export default function SidebarUser() {
   const handleOnclick = () => {
     setIdOnCLick(id);
   }
-  useEffect(() => {
-    axios.get(`https://jsonplaceholder.typicode.com/posts/${idOnclick}`)
+  useEffect(() => {  
+    axios.get(`https://jsonplaceholder.typicode.com/posts/${idOnclick}`) 
       .then(res => {
         console.log(res)
         setPost(res.data)
@@ -28,7 +30,7 @@ export default function SidebarUser() {
       <div className="content body-content">
           <div className='up-block'>
             <h1 className='title'>Games</h1>
-            <DataFetching /><br /><br />
+            <DataFetching /><br />
             <input type="text" value={id} onChange={e => setId(e.target.value)}/>
             <button onClick={handleOnclick}>Find the Id</button>
             <li className='alert alert-primary'>{posts.title}</li>
